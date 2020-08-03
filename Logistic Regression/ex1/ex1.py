@@ -1,10 +1,9 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib.pyplot as plt
+import scipy.optimize as opt
 
-df = pd.read_csv("ex2data1.txt", header=None)
+data = pd.read_csv('ex2data1.txt', header = None)
+X = data.iloc[:,:-1]
+y = data.iloc[:,2]
 
-df.head()
-df.describe()
-
-pos, neg = (y == 1).reshape(100, 1), (y == 0).reshape(100, 1)
